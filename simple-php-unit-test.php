@@ -10,13 +10,19 @@ function expect_true( $input){
 	if( $input === true){
 
 	}else{
-		throw new Exception('expect true but return false');
+		$err = 'expect true but return "' . $input . '"';
+		echo "\n" . $err . "\n";
+		// echo "\n" . $err;
+		throw new Exception($err);
 	}
 }
 
 function expect_false( $input){
 	if( $input === true){
-		throw new Exception('expect false but return true');
+		$err = 'expect false but return "' . $input . '"';
+		echo "\n" . $err . "\n";
+		// echo "\n" . $err;
+		throw new Exception($err);
 	}
 }
 
@@ -32,7 +38,6 @@ function describe($desc, $callback){
 	}
 
 	if( $is_passed ){
-
 		echo "\033[0;32m" . 'passed' . "\033[0m";
 	}else{
 		echo "\033[1;31m" . 'falied' . "\033[0m";
