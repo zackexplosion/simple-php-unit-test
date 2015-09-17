@@ -1,9 +1,9 @@
-# Sample php uni test
+# Simple PHP Unit Test
 
-## sample usage
+## Usage
 
-sample.php
-```
+include the main file
+```php
 include('../simple-php-unit-test/simple-php-unit-test.php');
 
 function a_function_to_be_test ( $input){
@@ -34,4 +34,10 @@ php sample-test.php
 
 Output
 
-![http://imgur.com/UfyO4u4]()
+![](http://i.imgur.com/UfyO4u4.png)
+
+# Others
+
+You can work with this
+
+<https://github.com/cstony0917/guard-phpcli>
