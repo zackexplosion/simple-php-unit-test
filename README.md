@@ -2,7 +2,7 @@
 
 ## Usage
 
-sample-test.php
+include the main file
 ```php
 include('../simple-php-unit-test/simple-php-unit-test.php');
 
