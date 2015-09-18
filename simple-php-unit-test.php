@@ -41,6 +41,7 @@ function describe($desc, $callback){
 		echo "\033[0;32m" . 'passed' . "\033[0m";
 	}else{
 		echo "\033[1;31m" . 'falied' . "\033[0m";
+		echo "\n-----------------";
 	}
 
 	echo "\n";
