@@ -1,0 +1,7 @@
+{
+    "name": "zackexplosion/simple-php-unit-test",
+    "description": "A simple php unit test framework ",
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
