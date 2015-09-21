@@ -16,6 +16,7 @@ class SimplePHPUnitTest {
 	}
 
 	public function start(){
+		$start_time = microtime();
 		$fails = array();
 		foreach ($this->specs as $spec) {
 			$is_passed = true;
@@ -56,6 +57,8 @@ class SimplePHPUnitTest {
 			echo "\033[0m";
 			echo "\n";
 		}
+
+		echo 'time elapsed : ' . ( microtime() - $start_time / 1000 ) . ' µs';
 	}
 }
 
