@@ -60,41 +60,37 @@ class SimplePHPUnitTest {
 }
 
 
-class expect{
-	public static function true($input){
+class _expect{
+	private $input;
+
+	public function __construct($input){
 		// var_dump($input);
-		if( $input !== true){
-
-			if(gettype($input) === 'boolean'){
-				$input = ($input) ? 'true' : 'false';
-			}
-
-			$err = 'expect "true" but return "' . $input . '"';
-			// $err = 'expect "true" but return "false"';
-
-			// echo "-----------------\n";
-			// echo "\n" . $err . "\n";
-			// echo "\n-----------------";
-			// echo "\n" . $err;
-			throw new Exception($err);
-		}
+		$this->input = $input;
 	}
-	public static function false($input){
-		// var_dump($input !== false);
-		if( $input !== false){
 
-			if(gettype($input) === 'boolean'){
-				$input = ($input) ? 'true' : 'false';
-			}
+	private static function to_string($boolean){
+		if(gettype($boolean) === 'boolean'){
+			$boolean = ($boolean) ? 'true' : 'false';
+		}
+		return $boolean;
+	}
 
-			$err = 'expect "false" but return "' . $input . '"';
-			// $err = 'expect "false" but return "true"';
+	public function to_equal($equal){
+		$input = $this->input;
+		// var_dump($equal);
+		if($input !== $equal){
+			$input = $this::to_string($input);
 
-			// echo "\n-----------------\n";
-			// echo "\n" . $err . "\n";
-			// echo "\n-----------------\n";
-			// echo "\n" . $err;
+			$equal = $this::to_string($equal);
+
+			$err = 'expect "' . $equal . '" but return "' . $input . '"';
+
 			throw new Exception($err);
 		}
 	}
 }
+
+function expect($input){
+	return new _expect($input);
+}
+
