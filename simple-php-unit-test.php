@@ -58,7 +58,8 @@ class SimplePHPUnitTest {
 			echo "\n";
 		}
 
-		echo 'time elapsed : ' . ( microtime() - $start_time / 1000 ) . ' µs';
+		echo "\n";
+		echo 'Time Elapsed : ' . ( microtime() - $start_time / 1000 ) . ' µs';
 	}
 }
 
