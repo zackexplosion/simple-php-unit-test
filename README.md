@@ -5,6 +5,8 @@
 include the main file
 ```php
 
+include('../simple-php-unit-test/simple-php-unit-test.php');
+
 function a_function_to_be_test ( $input){
 	if($input === 'hello'){
 		return true;
@@ -17,22 +19,23 @@ $spec = new SimplePHPUnitTest();
 
 
 $spec->describe('a_function_to_be_test input hello should be true', function(){
-	expect::true(a_function_to_be_test('hello'));
-	// expect_true(false);
+	$r = a_function_to_be_test('hello');
+	expect($r)->to_equal(true);
 });
 
 
 $spec->describe('a_function_to_be_test input not hello should be false', function(){
 	$r = a_function_to_be_test('yppppppppp');
-	expect::false($r);
+	expect($r)->to_equal(false);
 });
 
 $spec->describe('a_function_to_be_test should failed', function(){
 	$r = a_function_to_be_test('yppppppppp');
-	expect::true($r);
+	expect($r)->to_equal(true);
 });
 
 $spec->start();
+
 ```
 
 Then run

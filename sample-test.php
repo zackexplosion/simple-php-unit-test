@@ -22,7 +22,6 @@ $spec->describe('a_function_to_be_test input hello should be true', function(){
 $spec->describe('a_function_to_be_test input not hello should be false', function(){
 	$r = a_function_to_be_test('yppppppppp');
 	expect($r)->to_equal(false);
-	// expect::false($r);
 });
 
 $spec->describe('a_function_to_be_test should failed', function(){
