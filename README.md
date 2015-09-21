@@ -44,8 +44,7 @@ php sample-test.php
 
 Output
 
-![](http://i.imgur.com/UfyO4u4.png)
-
+![Imgur](http://i.imgur.com/HTAFnXg.png)
 # Others
 
 You can work with this
